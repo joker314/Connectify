@@ -1,3 +1,11 @@
+'''
+Hello Github coders!
+There's lots of cool things here you can tinker with, if you find a bug submit an issue.
+If you manage to tinker something Awesome go to:
+https://github.com/Omegabyte/Postman/
+Then make your fork and start a pull request.
+'''
+
 import httplib, urllib, ssl
 
 # From http://stackoverflow.com/questions/14102416/python-requests-requests-exceptions-sslerror-errno-8-ssl-c504-eof-occurred
@@ -44,20 +52,26 @@ def head(url, headers, params):
     request(url, 'HEAD')
 
 def httpspost(url, headers, params):
+    ''' Send a HTTPS POST request. '''
     httpsrequest(url, 'POST', headers, params)
 
 def httpsget(url, headers, params):
+    ''' Send a HTTPS GET request. '''
     httpsrequest(url, 'GET', headers, params)
 
 def httpshead(url, headers, params):
+    ''' Send a HTTPS HEAD request. '''
     httpsrequest(url, 'HEAD')
 
 def responsestatus(num):
+    ''' Return the response status of num, num being the request number. '''
     return response[num].status
 
 def responsereason(num):
+    ''' Return the response reason of num, num being the request number. '''
     return response[num].reason
 
 def responsedata(num):
+    ''' Return the response data of num, num being the request number. '''
     return response[num].read()
 
