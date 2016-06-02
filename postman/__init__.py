@@ -29,7 +29,7 @@ defaultall = {"Content-type": "*/*",
            "Accept": "*/*"}
 
 if not py3:
-    def httprequest(url, method, getfile=None, headers=None, params=None):
+    def request(url, method, getfile=None, headers=None, params=None):
     ''' Send a HTTP request. '''
     conn = httplib.HTTPConnection(url)
     conn.request(method, getfile, urllib.urlencode(params), headers)
@@ -38,7 +38,7 @@ if not py3:
     response.append(conn.getresponse())
     conn.close()
 else:
-    def httprequest(url, method, getfile=None, headers=None, params=None):
+    def request(url, method, getfile=None, headers=None, params=None):
     ''' Send a HTTP request. '''
     conn = http.client.HTTPConnection(url)
     conn.request(method, getfile, urllib.parse.urlencode(params), headers)
