@@ -6,7 +6,13 @@ https://github.com/Omegabyte/Postman/
 Then make your fork and start a pull request.
 '''
 
-import httplib, urllib, ssl
+try:
+    import httplib, urllib, ssl
+except ImportError:
+    print('Using python 3, expect bugs!')
+    import http.client, urllib.parse, ssl
+    global py3
+    py3 = True
 
 # From http://stackoverflow.com/questions/14102416/python-requests-requests-exceptions-sslerror-errno-8-ssl-c504-eof-occurred
 from functools import wraps
@@ -18,22 +24,43 @@ def sslwrap(func):
     return bar
 ssl.wrap_socket = sslwrap(ssl.wrap_socket)
 
+''' Demo Headers. '''
 defaultall = {"Content-type": "*/*",
            "Accept": "*/*"}
 
-def request(url, method, getfile=None, headers=None, params=None):
+if not py3:
+    def httprequest(url, method, getfile=None, headers=None, params=None):
     ''' Send a HTTP request. '''
     conn = httplib.HTTPConnection(url)
-    conn.request(method, getfile, params, headers)
+    conn.request(method, getfile, urllib.urlencode(params), headers)
+    global response 
+    response = list()
+    response.append(conn.getresponse())
+    conn.close()
+else:
+    def httprequest(url, method, getfile=None, headers=None, params=None):
+    ''' Send a HTTP request. '''
+    conn = http.client.HTTPConnection(url)
+    conn.request(method, getfile, urllib.parse.urlencode(params), headers)
     global response 
     response = list()
     response.append(conn.getresponse())
     conn.close()
 
-def httpsrequest(url, method, getfile=None, headers=None, params=None):
+if not py3:
+    def httpsrequest(url, method, getfile=None, headers=None, params=None):
     ''' Send a HTTPS request. '''
     conn = httplib.HTTPSConnection(url)
-    conn.request(method, getfile, params, headers)
+    conn.request(method, getfile, urllib.urlencode(params), headers)
+    global response 
+    response = list()
+    response.append(conn.getresponse())
+    conn.close()
+else:
+    def httpsrequest(url, method, getfile=None, headers=None, params=None):
+    ''' Send a HTTPS request. '''
+    conn = http.client.HTTPSConnection(url)
+    conn.request(method, getfile, urllib.parse.urlencode(params), headers)
     global response 
     response = list()
     response.append(conn.getresponse())
