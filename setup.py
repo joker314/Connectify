@@ -17,7 +17,7 @@ here = path.abspath(path.dirname(__file__))
 #    long_description = f.read()
 
 setup(
-    name='postman',
+    name='connectify',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
@@ -28,7 +28,7 @@ setup(
     long_description='A Python library that delivers HTTP/HTTPS requests in a simple manner. Tested on Python 2.7 though should work on Python 3.',
 
     # The project's main homepage.
-    url='https://github.com/Omegabyte/Postman',
+    url='https://github.com/Omegabyte/Connectify',
 
     # Author details
     author='The Postman Developers',
@@ -68,7 +68,7 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=["postman"],
+    packages=["connectify"],
 
     # Alternatively, if you want to distribute just a my_module.py, uncomment
     # this:
@@ -91,7 +91,7 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={
-      'postman': ['logo.jpeg'],
+      'connectify': ['logo.jpeg'],
     },
 
     # Although 'package_data' is the preferred approach, in some case you may
