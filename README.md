@@ -1,6 +1,6 @@
 # Connectify
 <h5><em>A Python library that delivers HTTP/HTTPS requests in a simple manner.</em></h5>
-![alt tag](https://raw.githubusercontent.com/Omegabyte/Postman/master/connectify/logo.jpeg)
+![alt tag](https://raw.githubusercontent.com/Omegabyte/connectify/master/connectify/logo.jpeg)
 
 # Library Usage
 There are functions for major request methods:
