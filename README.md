@@ -4,7 +4,6 @@
 
 # Library Usage
 There are functions for major request methods:
-
 `postman.post("mysite.com:80", mypost, myheaders")`
 
 `postman.get("mysite.com:80", '/getfile.html', myheaders")`
@@ -12,11 +11,9 @@ There are functions for major request methods:
 `postman.head("mysite.com:80", '/')`
 
 You can use the request function for less common methods:
-
 `postman.request("mysite.com:80", "DELETE", '/deletefile.html', myheaders")`
 
 You can do the same stuff as mentioned with HTTPS:
-
 `postman.httpspost("mysite.com:80", mypost, myheaders")`
 
 `postman.httpsget("mysite.com:80", '/getfile.html', myheaders")`
