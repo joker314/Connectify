@@ -31,7 +31,7 @@ setup(
     url='https://github.com/Omegabyte/Connectify',
 
     # Author details
-    author='The Postman Developers',
+    author='The Connectify Developers',
     author_email='none',
 
     # Choose your license
