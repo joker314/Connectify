@@ -49,7 +49,7 @@ else:
 
 if not py3:
     def httpsrequest(url, method, getfile=None, headers=None, params=None):
-    ''' Send a HTTPS request. '''
+        ''' Send a HTTPS request. '''
     conn = httplib.HTTPSConnection(url)
     conn.request(method, getfile, urllib.urlencode(params), headers)
     global response 
@@ -58,7 +58,7 @@ if not py3:
     conn.close()
 else:
     def httpsrequest(url, method, getfile=None, headers=None, params=None):
-    ''' Send a HTTPS request. '''
+        ''' Send a HTTPS request. '''
     conn = http.client.HTTPSConnection(url)
     conn.request(method, getfile, urllib.parse.urlencode(params), headers)
     global response 
