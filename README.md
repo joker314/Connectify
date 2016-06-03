@@ -2,6 +2,9 @@
 <h5><em>A Python library that delivers HTTP/HTTPS requests in a simple manner.</em></h5>
 ![Connectify Logo](https://raw.githubusercontent.com/Omegabyte/Connectify/master/connectify/logo.jpeg)
 
+# Install
+Install with `pip install connectify`
+
 # Library Usage
 There are functions for major request methods:
 
@@ -24,6 +27,16 @@ You can do the same stuff as mentioned with HTTPS:
 `connectify.httpshead("mysite.com:80", '/')`
 
 `connectify.httpsrequest("mysite.com:80", "DELETE", '/deletefile.html', myheaders")`
+
+Handing responses is just as easy, you get response via response number (Response number starts at 0):
+
+`connectify.httpget("mysite.com:80", '/getfile.html', myheaders")`
+
+`print(connectify.responsestatus(0))`
+
+`print(connectify.responsereason(0))`
+
+`print(connectify.responsedata(0))`
 
 # I want to Help!
 Make your fork and start a pull request, I'll check it for errors and then merge it.
